@@ -20,6 +20,10 @@
 		376D746F25D6E86A00449700 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D746E25D6E86A00449700 /* GFBodyLabel.swift */; };
 		376D747225D6EA3700449700 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D747125D6EA3700449700 /* GFAlertVC.swift */; };
 		376D747525D6F29B00449700 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D747425D6F29B00449700 /* UIViewController+Ext.swift */; };
+		376D747D25D70BD500449700 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D747C25D70BD500449700 /* Follower.swift */; };
+		376D748125D70C6800449700 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D748025D70C6800449700 /* User.swift */; };
+		376D748D25D7113A00449700 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D748C25D7113A00449700 /* NetworkManager.swift */; };
+		376D749125D71B6E00449700 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D749025D71B6E00449700 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		376D746E25D6E86A00449700 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		376D747125D6EA3700449700 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
 		376D747425D6F29B00449700 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		376D747C25D70BD500449700 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		376D748025D70C6800449700 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		376D748C25D7113A00449700 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		376D749025D71B6E00449700 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +78,14 @@
 		376D743F25D6D86800449700 /* GithubFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				376D747A25D6F6A900449700 /* Support */,
-				376D747925D6F65F00449700 /* Extensions */,
+				376D748F25D71B5700449700 /* Utils */,
+				376D744E25D6D86900449700 /* Info.plist */,
 				376D747825D6F60B00449700 /* Custom Views */,
+				376D747925D6F65F00449700 /* Extensions */,
+				376D748A25D7112900449700 /* Managers */,
+				376D747B25D70BC600449700 /* Models */,
 				376D747725D6F5CE00449700 /* Screens */,
+				376D747A25D6F6A900449700 /* Support */,
 			);
 			path = GithubFollowers;
 			sourceTree = "<group>";
@@ -115,9 +127,33 @@
 				376D744225D6D86800449700 /* SceneDelegate.swift */,
 				376D744925D6D86900449700 /* Assets.xcassets */,
 				376D744B25D6D86900449700 /* LaunchScreen.storyboard */,
-				376D744E25D6D86900449700 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		376D747B25D70BC600449700 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				376D747C25D70BD500449700 /* Follower.swift */,
+				376D748025D70C6800449700 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		376D748A25D7112900449700 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				376D748C25D7113A00449700 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		376D748F25D71B5700449700 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				376D749025D71B6E00449700 /* ErrorMessage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,14 +225,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376D748125D70C6800449700 /* User.swift in Sources */,
 				376D746525D6DDD800449700 /* GFTextField.swift in Sources */,
 				376D746825D6E1C900449700 /* FollowersListVC.swift in Sources */,
 				376D745D25D6D96D00449700 /* FavoritesListVC.swift in Sources */,
 				376D747525D6F29B00449700 /* UIViewController+Ext.swift in Sources */,
 				376D746125D6DCBB00449700 /* GFButton.swift in Sources */,
 				376D747225D6EA3700449700 /* GFAlertVC.swift in Sources */,
+				376D749125D71B6E00449700 /* ErrorMessage.swift in Sources */,
 				376D746F25D6E86A00449700 /* GFBodyLabel.swift in Sources */,
+				376D747D25D70BD500449700 /* Follower.swift in Sources */,
 				376D746C25D6E7A800449700 /* GFTitleLabel.swift in Sources */,
+				376D748D25D7113A00449700 /* NetworkManager.swift in Sources */,
 				376D745A25D6D96300449700 /* SearchVC.swift in Sources */,
 				376D744125D6D86800449700 /* AppDelegate.swift in Sources */,
 				376D744325D6D86800449700 /* SceneDelegate.swift in Sources */,
