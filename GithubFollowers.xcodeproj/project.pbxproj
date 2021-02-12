@@ -70,22 +70,54 @@
 		376D743F25D6D86800449700 /* GithubFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				376D744025D6D86800449700 /* AppDelegate.swift */,
-				376D744225D6D86800449700 /* SceneDelegate.swift */,
-				376D745925D6D96300449700 /* SearchVC.swift */,
-				376D746725D6E1C900449700 /* FollowersListVC.swift */,
+				376D747A25D6F6A900449700 /* Support */,
+				376D747925D6F65F00449700 /* Extensions */,
+				376D747825D6F60B00449700 /* Custom Views */,
+				376D747725D6F5CE00449700 /* Screens */,
+			);
+			path = GithubFollowers;
+			sourceTree = "<group>";
+		};
+		376D747725D6F5CE00449700 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
 				376D745C25D6D96D00449700 /* FavoritesListVC.swift */,
-				376D744925D6D86900449700 /* Assets.xcassets */,
-				376D744B25D6D86900449700 /* LaunchScreen.storyboard */,
-				376D744E25D6D86900449700 /* Info.plist */,
+				376D746725D6E1C900449700 /* FollowersListVC.swift */,
+				376D745925D6D96300449700 /* SearchVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		376D747825D6F60B00449700 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				376D747125D6EA3700449700 /* GFAlertVC.swift */,
 				376D746025D6DCBB00449700 /* GFButton.swift */,
 				376D746425D6DDD800449700 /* GFTextField.swift */,
 				376D746B25D6E7A800449700 /* GFTitleLabel.swift */,
 				376D746E25D6E86A00449700 /* GFBodyLabel.swift */,
-				376D747125D6EA3700449700 /* GFAlertVC.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		376D747925D6F65F00449700 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				376D747425D6F29B00449700 /* UIViewController+Ext.swift */,
 			);
-			path = GithubFollowers;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		376D747A25D6F6A900449700 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				376D744025D6D86800449700 /* AppDelegate.swift */,
+				376D744225D6D86800449700 /* SceneDelegate.swift */,
+				376D744925D6D86900449700 /* Assets.xcassets */,
+				376D744B25D6D86900449700 /* LaunchScreen.storyboard */,
+				376D744E25D6D86900449700 /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
