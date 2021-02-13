@@ -1,0 +1,26 @@
+//
+//  UIHelper.swift
+//  GithubFollowers
+//
+//  Created by Calvin Tang on 2/12/21.
+//
+
+import UIKit
+
+struct UIHelper {
+    
+    static func createThreeColumnFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
+        let width = view.bounds.width
+        let padding: CGFloat = 12 // Padding of edge
+        let minimumItemSpacing: CGFloat = 10 // Padding between middle cells
+        let availableWidth = width - (padding * 2) - (minimumItemSpacing * 2)
+        let cellWidth = availableWidth/3
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth + 40)
+        
+        return flowLayout
+    }
+
+}
