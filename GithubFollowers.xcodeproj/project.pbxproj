@@ -39,6 +39,7 @@
 		376D749625D7375E00449700 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D749525D7375E00449700 /* FollowerCell.swift */; };
 		376D749925D737E000449700 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D749825D737E000449700 /* GFAvatarImageView.swift */; };
 		378DC05525D97BF200F24342 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DC05425D97BF200F24342 /* PersistanceManager.swift */; };
+		378DC05825D988B400F24342 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DC05725D988B400F24342 /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		376D749525D7375E00449700 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		376D749825D737E000449700 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		378DC05425D97BF200F24342 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		378DC05725D988B400F24342 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				376D749525D7375E00449700 /* FollowerCell.swift */,
+				378DC05725D988B400F24342 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				376D746125D6DCBB00449700 /* GFButton.swift in Sources */,
 				3750781825D8B86100AFCB5B /* GFFollowerItemVC.swift in Sources */,
 				3750780B25D8AF3C00AFCB5B /* GFItemInfoView.swift in Sources */,
+				378DC05825D988B400F24342 /* FavoriteCell.swift in Sources */,
 				376D747225D6EA3700449700 /* GFAlertVC.swift in Sources */,
 				378DC05525D97BF200F24342 /* PersistanceManager.swift in Sources */,
 				376D749625D7375E00449700 /* FollowerCell.swift in Sources */,
