@@ -38,6 +38,7 @@
 		376D749125D71B6E00449700 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D749025D71B6E00449700 /* ErrorMessage.swift */; };
 		376D749625D7375E00449700 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D749525D7375E00449700 /* FollowerCell.swift */; };
 		376D749925D737E000449700 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376D749825D737E000449700 /* GFAvatarImageView.swift */; };
+		378DC05525D97BF200F24342 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DC05425D97BF200F24342 /* PersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		376D749025D71B6E00449700 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		376D749525D7375E00449700 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		376D749825D737E000449700 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		378DC05425D97BF200F24342 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				376D748C25D7113A00449700 /* NetworkManager.swift */,
+				378DC05425D97BF200F24342 /* PersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				3750781825D8B86100AFCB5B /* GFFollowerItemVC.swift in Sources */,
 				3750780B25D8AF3C00AFCB5B /* GFItemInfoView.swift in Sources */,
 				376D747225D6EA3700449700 /* GFAlertVC.swift in Sources */,
+				378DC05525D97BF200F24342 /* PersistanceManager.swift in Sources */,
 				376D749625D7375E00449700 /* FollowerCell.swift in Sources */,
 				3750780225D8685F00AFCB5B /* GFUserInfoHeaderVC.swift in Sources */,
 				376D749125D71B6E00449700 /* ErrorMessage.swift in Sources */,
