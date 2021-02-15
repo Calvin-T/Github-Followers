@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = createTabbar()
+        window?.rootViewController = GFTabBarController()
         window?.makeKeyAndVisible()
         
         configureNavigationBar()
@@ -28,35 +28,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .systemGreen
     }
     
-    func createSearchNC() -> UINavigationController {
-        // Tab properties are configured in the VC itself
-        let searchVC = SearchVC()
-        searchVC.title = "Search"
-        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        
-        return UINavigationController(rootViewController: searchVC)
-    }
-    
-    func createFavoritesListNC() -> UINavigationController {
-        // Tab properties are configured in the VC itself
-        let favoritesListVC = FavoritesListVC()
-        favoritesListVC.title = "Favorites"
-        favoritesListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-        
-        return UINavigationController(rootViewController: favoritesListVC)
-    }
-    
-    func createTabbar() -> UITabBarController {
-        let tabbar = UITabBarController()
-        
-        // Set system wide tint color of tab bar to green
-        UITabBar.appearance().tintColor = .systemGreen
-        
-        tabbar.viewControllers = [createSearchNC(), createFavoritesListNC()]
-        
-        return tabbar
-    }
-
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

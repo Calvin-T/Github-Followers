@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol FollowersListVCDelegate: class {
-    func didRequestFollowers(for username: String)
-}
-
-class FollowersListVC: UIViewController {
+class FollowersListVC: GFDataLoadingVC {
     
     enum Section {
         case main
@@ -26,6 +22,16 @@ class FollowersListVC: UIViewController {
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
+    
+    init(username: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+        title = username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +66,6 @@ class FollowersListVC: UIViewController {
     func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for a username"
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
@@ -173,9 +178,14 @@ extension FollowersListVC: UICollectionViewDelegate {
     
 }
 
-extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
+extension FollowersListVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredFollowers.removeAll()
+            updateData(on: followers)
+            isSearching = false
+            return
+        }
         isSearching = true
         
         // Think of filter, map, reduce
@@ -187,14 +197,9 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
         updateData(on: filteredFollowers)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
-        updateData(on: followers)
-    }
-    
 }
 
-extension FollowersListVC: FollowersListVCDelegate {
+extension FollowersListVC: UserInfoVCDelegate {
     func didRequestFollowers(for username: String) {
         // Reset view and get followers for new username
         self.username = username
@@ -203,6 +208,7 @@ extension FollowersListVC: FollowersListVCDelegate {
         followers.removeAll()
         filteredFollowers.removeAll()
         updateData(on: followers)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         
         getFollowers(username: username, page: page)
     }

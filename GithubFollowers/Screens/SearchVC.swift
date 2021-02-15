@@ -17,6 +17,8 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+        view.addSubviews(logoImageView, usernameTextField, getFollowersButton)
+        
         configureLogoImageView()
         configureUsernameTextField()
         configureGetFollowersButton()
@@ -27,10 +29,11 @@ class SearchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        usernameTextField.text = ""
     }
     
     func dismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer.init(target: self.view, action: #selector(UIView.endEditing))
+        let tap = UITapGestureRecognizer.init(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
@@ -40,21 +43,23 @@ class SearchVC: UIViewController {
             return
         }
         
-        let followersListVC = FollowersListVC()
-        followersListVC.username = usernameTextField.text
-        followersListVC.title = usernameTextField.text
+        // Close keyboard
+        usernameTextField.resignFirstResponder()
+        
+        let followersListVC = FollowersListVC(username: usernameTextField.text!)
         
         navigationController?.pushViewController(followersListVC, animated: true)
     }
     
     func configureLogoImageView() {
-        view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = Images.ghLogo
 
+        // If device is SE or 8 zoomed, have logo a little higher
+        let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+        
         NSLayoutConstraint.activate([
-            // Account for the notch by using safeAreaLayoutGuide
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
@@ -62,7 +67,6 @@ class SearchVC: UIViewController {
     }
     
     func configureUsernameTextField() {
-        view.addSubview(usernameTextField)
         
         NSLayoutConstraint.activate([
             // Anchor to bottom of logo + 50
@@ -77,7 +81,6 @@ class SearchVC: UIViewController {
     }
     
     func configureGetFollowersButton() {
-        view.addSubview(getFollowersButton)
         getFollowersButton.addTarget(self, action: #selector(pushFollowersListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([

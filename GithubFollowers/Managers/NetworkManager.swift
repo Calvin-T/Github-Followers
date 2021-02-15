@@ -89,12 +89,44 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .iso8601
                 let user = try decoder.decode(User.self, from: data)
                 completed(.success(user))
             } catch {
                 completed(.failure(.invalidData))
                 return
             }
+            
+        }
+        
+        task.resume()
+    }
+    
+    func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
+        // return image if exists in cache
+        let cacheKey = NSString(string: urlString)
+        if let image = cache.object(forKey: cacheKey) {
+            return completed(image)
+        }
+        
+        // No need to show an error, have placeholder
+        // This gets called for every cell, would get bombarded with errors
+        guard let url = URL(string: urlString) else { return completed(nil) }
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self,
+                  error == nil,
+                  let response = response as? HTTPURLResponse, response.statusCode == 200,
+                  let data = data,
+                  let image = UIImage(data: data) else {
+                    completed(nil)
+                    return
+                    }
+            
+            // Put image in cache
+            self.cache.setObject(image, forKey: cacheKey)
+            
+            completed(image)
             
         }
         
